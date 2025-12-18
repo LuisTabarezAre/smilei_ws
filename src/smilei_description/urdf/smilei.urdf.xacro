@@ -1,0 +1,15 @@
+<?xml version ="1.0"?>
+<robot name = "smilei" xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+    <xacro:include filename = "smilei_base.xacro" />
+    <xacro:include filename = "smilei_common.xacro" />
+    <xacro:include filename = "smilei_head.xacro" />  
+    <xacro:include filename = "smilei_cover.xacro" />
+    <xacro:include filename = "smilei_motor.xacro" />
+    <xacro:include filename = "smilei_link.xacro" />
+    <xacro:include filename = "smilei_right_arm.xacro"/>
+    <xacro:include filename = "smilei_left_arm.xacro"/>
+    <xacro:include filename = "smilei_gz_control.xacro"/>
+    <!--<xacro:include filename = "smilei_gz_colors.xacro"/>--> 
+
+</robot>

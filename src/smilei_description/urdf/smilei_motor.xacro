@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="motor_link" params="prefix">
+        <link name="motor_${prefix}">
+          <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.250" />
+            <inertia ixx="3.57960463636854E-05" ixy="3.52628499802399E-19" ixz="-2.47532365544156E-15" iyy="4.86365561717405E-05" iyz="3.19397366497296E-08" izz="3.83022654282651E-05" />
+          </inertial>
+          <visual>
+            <origin  xyz="0 0 0" rpy="0 0 0" />
+            <material name="motor_color"/>
+            <geometry>
+              <mesh filename="file:///home/robot/ws_smilei/src/smilei_description/meshes/motor/motor.STL" />
+            </geometry>
+          </visual>
+          <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+              <mesh filename="file:///home/robot/ws_smilei/src/smilei_description/meshes/motor/motor.STL" />
+            </geometry>
+          </collision>
+        </link>
+    </xacro:macro>
+
+    <xacro:macro name="motor_joint" params="prefix xyz rpy parent child">
+        <joint name="motor_${prefix}_joint" type="fixed">
+          <origin xyz="${xyz}" rpy="${rpy}" />
+          <parent link="${parent}" />
+          <child link="${child}" />
+          <axis xyz="0 0 0" />
+        </joint>
+    </xacro:macro>
+
+</robot>

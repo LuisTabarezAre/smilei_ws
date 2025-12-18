@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="link" params="prefix suffix xyz mass ixx ixy ixz iyy iyz izz color">
+        <link name="link_${prefix}">
+          <inertial>
+            <origin xyz="${xyz}" rpy="0 0 0" />
+            <mass value="${mass}" />
+            <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}" />
+          </inertial>
+          <visual>
+            <origin  xyz="0 0 0" rpy="0 0 0" />
+            <material name="${color}"/>
+            <geometry>
+              <mesh filename="file:///home/robot/ws_smilei/src/smilei_description/meshes/links/link_${suffix}.STL" />
+            </geometry>
+          </visual>
+          <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+              <mesh
+                filename="file:///home/robot/ws_smilei/src/smilei_description/meshes/links/link_${suffix}.STL" />
+            </geometry>
+          </collision>
+        </link>
+    </xacro:macro>
+
+    <xacro:macro name="link_joint" params="prefix type xyz rpy parent child axis">
+        <xacro:property name="joint_type" value="${type}"/>
+        <joint name="${prefix}" type="${type}">
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <parent link="${parent}" />
+            <child link="${child}" />
+            <axis xyz="${axis}" />
+            <xacro:if value="${type=='revolute'}"><limit lower="-1.57" upper="1.57" effort="3.5" velocity="10" /></xacro:if>
+        </joint>
+    </xacro:macro>
+
+</robot>

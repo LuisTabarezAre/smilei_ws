@@ -1,0 +1,1388 @@
+<?xml version ="1.0"?>
+<robot name = "smilei" xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="6.93649845895372E-10 2.95139048617221E-10 -8.97978962022261E-10"
+        rpy="0 0 0" />
+      <mass
+        value="3.8959492955551" />
+      <inertia
+        ixx="0.00757537342156862"
+        ixy="4.62744160439618E-07"
+        ixz="-7.21236888776117E-05"
+        iyy="0.00373165144911958"
+        iyz="3.169758147286E-06"
+        izz="0.0070405110243338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/body/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/body/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="head_link">
+    <inertial>
+      <origin
+        xyz="-0.00194719502025795 -0.00507322884618888 0.00458930532049323"
+        rpy="0 0 0" />
+      <mass
+        value="4.95327171902462" />
+      <inertia
+        ixx="0.0287690196977937"
+        ixy="6.03520670584606E-06"
+        ixz="0.000340504077086098"
+        iyy="0.0293183754516323"
+        iyz="-2.90299393982322E-06"
+        izz="0.0279793601866727" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/head/head_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/head/head_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_joint"
+    type="fixed">
+    <origin
+      xyz="0.00892007209728322 0.00498018673025529 0.352220146089762"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="head_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="neck_link">
+    <inertial>
+      <origin
+        xyz="-2.01041979991795E-05 -1.19445940064203E-07 8.65514587015809E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.940609658085657" />
+      <inertia
+        ixx="0.000440480492174577"
+        ixy="1.39106088164405E-07"
+        ixz="9.00437571232366E-08"
+        iyy="0.000600679810594541"
+        iyz="9.20827948735481E-09"
+        izz="0.000301601539200308" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/neck/neck_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/neck/neck_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_joint"
+    type="fixed">
+    <origin
+      xyz="0.00763480628333965 1.40170417902239E-05 0.132109530834518"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motor_ql0">
+    <inertial>
+      <origin
+        xyz="-3.98930630890471E-09 2.03746880478306E-11 -3.32599506269737E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268636010033" />
+      <inertia
+        ixx="0.000187598177170082"
+        ixy="3.44937880673246E-09"
+        ixz="-5.44219404328864E-07"
+        iyy="0.000115166375059351"
+        iyz="-1.89543410228365E-08"
+        izz="0.00011630872457656" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_ql0_joint"
+    type="fixed">
+    <origin
+      xyz="0.00764156221103399 0.0643731527627516 0.199134337798754"
+      rpy="-3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor_ql0" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_l0">
+    <inertial>
+      <origin
+        xyz="-2.79240519596158E-12 -0.0323342467663647 0.0205262846676379"
+        rpy="0 0 0" />
+      <mass
+        value="0.0906240751108846" />
+      <inertia
+        ixx="3.57960463636854E-05"
+        ixy="3.52628499802399E-19"
+        ixz="-2.47532365544156E-15"
+        iyy="4.86365561717405E-05"
+        iyz="3.19397366497296E-08"
+        izz="3.83022654282651E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ql0"
+    type="revolute">
+    <origin
+      xyz="0.0176401317247248 0 -4.5027795268604E-05"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="motor_ql0" />
+    <child
+      link="link_l0" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="5" />
+  </joint>
+  <link
+    name="motor_ql1">
+    <inertial>
+      <origin
+        xyz="-3.99798806213769E-09 2.54867515980806E-11 -3.35889677183232E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268635790516" />
+      <inertia
+        ixx="0.000187598177169975"
+        ixy="3.44937984151061E-09"
+        ixz="-5.44219405173215E-07"
+        iyy="0.000115166375058442"
+        iyz="-1.89543424450274E-08"
+        izz="0.000116308724575834" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_ql1_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0664226317247253 0.0500450277952679"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="link_l0" />
+    <child
+      link="motor_ql1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_l1">
+    <inertial>
+      <origin
+        xyz="4.65784220375909E-05 0.00400017244374749 0.0314904318565732"
+        rpy="0 0 0" />
+      <mass
+        value="0.125508720332659" />
+      <inertia
+        ixx="4.86757343787694E-05"
+        ixy="3.65808621604759E-19"
+        ixz="2.4753952859359E-15"
+        iyy="8.08142303053274E-05"
+        iyz="3.43048619914877E-09"
+        izz="4.19570502040363E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ql1"
+    type="revolute">
+    <origin
+      xyz="0.0176401317247248 0 -4.50277952686318E-05"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="motor_ql1" />
+    <child
+      link="link_l1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor_ql2">
+    <inertial>
+      <origin
+        xyz="-3.97236329940931E-09 4.35390612452125E-11 -3.32741842412609E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268636429685" />
+      <inertia
+        ixx="0.000187598177170278"
+        ixy="3.4493779281568E-09"
+        ixz="-5.44219404426561E-07"
+        iyy="0.000115166375060928"
+        iyz="-1.89543394067423E-08"
+        izz="0.00011630872457812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_ql2_joint"
+    type="fixed">
+    <origin
+      xyz="4.5028E-05 -0.0016099 0.048791"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link_l1" />
+    <child
+      link="motor_ql2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_l2">
+    <inertial>
+      <origin
+        xyz="-5.53210361964318E-08 -3.08263377463147E-08 0.0453652157026042"
+        rpy="0 0 0" />
+      <mass
+        value="0.177112239219215" />
+      <inertia
+        ixx="6.22677964235683E-05"
+        ixy="1.66614437846769E-09"
+        ixz="7.08695120629543E-09"
+        iyy="8.72229888424613E-05"
+        iyz="3.93100900911783E-09"
+        izz="4.39944727708975E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ql2"
+    type="revolute">
+    <origin
+      xyz="0.01764 0 -4.5028E-05"
+      rpy="0 1.5708 0" />
+    <parent
+      link="motor_ql2" />
+    <child
+      link="link_l2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor_ql3">
+    <inertial>
+      <origin
+        xyz="-4.00094601893386E-09 5.90300031078073E-12 -3.31648644658067E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268635736933" />
+      <inertia
+        ixx="0.000187598177169955"
+        ixy="3.44938081392252E-09"
+        ixz="-5.44219406923359E-07"
+        iyy="0.000115166375058223"
+        iyz="-1.89543426662691E-08"
+        izz="0.00011630872457675" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_ql3_joint"
+    type="fixed">
+    <origin
+      xyz="-4.50277952689371E-05 0 0.0384098682752751"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="link_l2" />
+    <child
+      link="motor_ql3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_l3">
+    <inertial>
+      <origin
+        xyz="0.0151456632288249 2.13130589347688E-05 -0.000850207153413579"
+        rpy="0 0 0" />
+      <mass
+        value="0.169169755966947" />
+      <inertia
+        ixx="5.43200800675035E-05"
+        ixy="-1.27206313407834E-12"
+        ixz="-4.72035918422055E-10"
+        iyy="5.8321559860457E-05"
+        iyz="-4.64625826341459E-13"
+        izz="2.86622818226399E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ql3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0940499999999999"
+      rpy="1.57079632679489 -1.5707963267949 0" />
+    <parent
+      link="link_l2" />
+    <child
+      link="link_l3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="cf_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00538971265618945" />
+      <inertia
+        ixx="8.16681795861267E-07"
+        ixy="7.61350069227245E-13"
+        ixz="-7.02831426100783E-14"
+        iyy="1.53526099929422E-06"
+        iyz="4.6459713650591E-14"
+        izz="1.5246161394666E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_cf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_cf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cf_joint"
+    type="fixed">
+    <origin
+      xyz="0.0650000113064422 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_l3" />
+    <child
+      link="cf_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_ee">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386067357498254" />
+      <inertia
+        ixx="3.68984907930345E-06"
+        ixy="7.25158239907005E-12"
+        ixz="-1.54796460272442E-06"
+        iyy="2.44168936526029E-05"
+        iyz="1.80917489247246E-12"
+        izz="2.52602134650841E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_ee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_ee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0.122883670845766 0 0.00499923711449955"
+      rpy="0 0 0" />
+    <parent
+      link="link_l3" />
+    <child
+      link="link_ee" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motor_qr0">
+    <inertial>
+      <origin
+        xyz="-3.98968591497351E-09 1.2026851736735E-11 -3.33378691319552E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.31626863598675" />
+      <inertia
+        ixx="0.000187598177170063"
+        ixy="3.44937952545346E-09"
+        ixz="-5.44219405882376E-07"
+        iyy="0.000115166375059427"
+        iyz="-1.89543402536534E-08"
+        izz="0.000116308724575845" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_qr0_joint"
+    type="fixed">
+    <origin
+      xyz="0.0076491 -0.064347 0.19913"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor_qr0" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_r0">
+    <inertial>
+      <origin
+        xyz="2.70927033785562E-05 0.0323260751866226 0.0205420485390322"
+        rpy="0 0 0" />
+      <mass
+        value="0.0905174506624153" />
+      <inertia
+        ixx="3.57955214900607E-05"
+        ixy="1.77193022704698E-19"
+        ixz="1.23767250335821E-15"
+        iyy="4.86356831492924E-05"
+        iyz="-3.19397366496518E-08"
+        izz="3.83017405530843E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="qr0"
+    type="revolute">
+    <origin
+      xyz="0.0176401317247248 0 -4.5027795268604E-05"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="motor_qr0" />
+    <child
+      link="link_r0" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor_qr1">
+    <inertial>
+      <origin
+        xyz="-3.98429827845603E-09 2.98179536617482E-11 -3.32294675109424E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268636121967" />
+      <inertia
+        ixx="0.00018759817717013"
+        ixy="3.44937858845497E-09"
+        ixz="-5.44219405429635E-07"
+        iyy="0.000115166375060084"
+        iyz="-1.89543405843512E-08"
+        izz="0.000116308724576191" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_qr1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.066422631724724 0.0500450277952697"
+      rpy="0 0 -1.57079632679491" />
+    <parent
+      link="link_r0" />
+    <child
+      link="motor_qr1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_r1">
+    <inertial>
+      <origin
+        xyz="-4.02025635004577E-12 -0.00397343325365762 0.0314241563723731"
+        rpy="0 0 0" />
+      <mass
+        value="0.125896618848081" />
+      <inertia
+        ixx="4.86829099828726E-05"
+        ixy="9.99318520010283E-19"
+        ixz="1.10030447407053E-16"
+        iyy="8.08221022068871E-05"
+        iyz="-3.43048619872834E-09"
+        izz="4.1958483440178E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="qr1"
+    type="revolute">
+    <origin
+      xyz="0.0176401317247248 0 -4.5027795268604E-05"
+      rpy="1.57079632679488 0 1.57079632679491" />
+    <parent
+      link="motor_qr1" />
+    <child
+      link="link_r1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor_qr2">
+    <inertial>
+      <origin
+        xyz="-3.97497088022725E-09 -3.31152502641707E-09 -2.93927104877412E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268636346023" />
+      <inertia
+        ixx="0.000187598177170233"
+        ixy="-5.44219403720932E-07"
+        ixz="-3.44937941440615E-09"
+        iyy="0.000116308724577265"
+        iyz="1.8954341568356E-08"
+        izz="0.000115166375060056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_qr2_joint"
+    type="fixed">
+    <origin
+      xyz="4.50277952689093E-05 0.00160986827527465 0.0487837485550931"
+      rpy="-3.14159265358974 0 1.57079632679489" />
+    <parent
+      link="link_r1" />
+    <child
+      link="motor_qr2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_r2">
+    <inertial>
+      <origin
+        xyz="3.2386340470536E-08 -2.04763144413811E-06 0.046083840055248"
+        rpy="0 0 0" />
+      <mass
+        value="0.179748826028585" />
+      <inertia
+        ixx="6.24423710962163E-05"
+        ixy="-3.46132439774195E-11"
+        ixz="9.45546169428818E-11"
+        iyy="8.75794479348696E-05"
+        iyz="-8.10383017896737E-09"
+        izz="4.4171936285476E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="qr2"
+    type="revolute">
+    <origin
+      xyz="0.0176401317247248 -4.50277952686318E-05 0"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="motor_qr2" />
+    <child
+      link="link_r2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor_qr3">
+    <inertial>
+      <origin
+        xyz="-4.01694011387121E-09 3.24163473841566E-11 -3.32725733076522E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.316268635346261" />
+      <inertia
+        ixx="0.000187598177169775"
+        ixy="3.44937949417334E-09"
+        ixz="-5.44219406638263E-07"
+        iyy="0.000115166375057116"
+        iyz="-1.89543430199638E-08"
+        izz="0.000116308724575722" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/motor/motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_qr3_joint"
+    type="fixed">
+    <origin
+      xyz="4.50277952689926E-05 0 0.0384098682752751"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="link_r2" />
+    <child
+      link="motor_qr3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_r3">
+    <inertial>
+      <origin
+        xyz="0.0151694469619094 -4.51201603857143E-10 -0.000866438479056875"
+        rpy="0 0 0" />
+      <mass
+        value="0.169276380415416" />
+      <inertia
+        ixx="5.43209530899516E-05"
+        ixy="-1.43844492575628E-12"
+        ixz="-4.71775094623105E-10"
+        iyy="5.83220847338299E-05"
+        iyz="-4.61075446002774E-13"
+        izz="2.86628066980724E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_r3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="qr3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0940499999999999"
+      rpy="1.57079632679484 -1.5707963267949 0" />
+    <parent
+      link="link_r2" />
+    <child
+      link="link_r3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3.5"
+      velocity="10" />
+  </joint>
+  <link
+    name="cfr_link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 -2.77555756156289E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0053897126561895" />
+      <inertia
+        ixx="8.16681795861272E-07"
+        ixy="-7.61350072541541E-13"
+        ixz="-7.0283143801042E-14"
+        iyy="1.53526099929423E-06"
+        iyz="-4.64597132408155E-14"
+        izz="1.52461613946661E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_cf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_cf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cfr_link_joint"
+    type="fixed">
+    <origin
+      xyz="0.0650000113064422 0 0"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="link_r3" />
+    <child
+      link="cfr_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_ree">
+    <inertial>
+      <origin
+        xyz="-1.41301211842304E-08 -1.8875597473933E-09 4.1632807201708E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386067469509396" />
+      <inertia
+        ixx="3.68984862661501E-06"
+        ixy="2.34221512664655E-07"
+        ixz="-1.53013665019369E-06"
+        iyy="2.44362284831387E-05"
+        iyz="-1.26139154092983E-07"
+        izz="2.52409296910644E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_ee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/links/link_ee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_ree_joint"
+    type="fixed">
+    <origin
+      xyz="0.122883670845766 -0.000756858223735779 -0.00494664196721117"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="link_r3" />
+    <child
+      link="link_ree" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="cover_link">
+    <inertial>
+      <origin
+        xyz="2.39377227479742E-05 4.13561867202913E-06 -1.860882310371E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.14811136804996" />
+      <inertia
+        ixx="0.0165421506668323"
+        ixy="4.78900601356394E-07"
+        ixz="4.23289504351418E-06"
+        iyy="0.016376336243709"
+        iyz="-2.28340733993978E-07"
+        izz="0.0111111937295698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/cover/cover_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smilei_description/meshes/cover/cover_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cover_link_joint"
+    type="fixed">
+    <origin
+      xyz="0.00767586514665961 1.44118282364193E-05 0.0305644318354628"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="cover_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <gazebo>
+        <!-- Joint state publisher -->
+        <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <parameters>$(find smilei_description)/config/smilei_controllers.yaml</parameters>
+        </plugin>
+  </gazebo>
+
+    <ros2_control name="GazeboSimSystem" type="system">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+        <joint name="ql0">
+            <command_interface name="effort">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="ql1">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity" />
+            <state_interface name="effort" />
+        </joint>
+        <joint name="ql2">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="ql3">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="qr0">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="qr1">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="qr2">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="qr3">
+            <command_interface name="effort">
+                <param name="min">-1.57</param>
+                <param name="max">1.57</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+    </ros2_control>
+</robot>

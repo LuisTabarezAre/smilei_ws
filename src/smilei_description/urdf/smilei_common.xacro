@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+    
+    <material name="base_color">
+        <color rgba="0.5 0.5 0.5 1" />
+    </material>
+
+    <material name="head_color">
+        <color rgba="1.0 1.0 1.0 1" />
+    </material>
+
+    <material name="cover_color">
+        <color rgba="1.0 0.55 0 1" />
+    </material>
+
+    <material name="link_color">
+        <color rgba="0.5 0.5 0.5 1" />
+    </material>
+
+    <material name="motor_color">
+        <color rgba="0 0 0 1" />
+    </material>
+
+</robot>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+    <xacro:motor_link prefix="qr0" />
+    <xacro:motor_joint prefix="qr0" xyz="0.0076491 -0.064347 0.19913" rpy="3.1416 0 -1.5708" parent="base_link" child="motor_qr0" />
+
+    <xacro:link prefix="qr0" suffix="r0" 
+            xyz="2.79240519596158E-12 0.0323342467663647 0.0205262846676379" 
+            mass="0.0906240751108846"  
+            ixx="3.57960463636854E-05" 
+            ixy="3.52628499802399E-19" 
+            ixz="-2.47532365544156E-15"
+            iyy="4.86365561717405E-05"
+            iyz="3.19397366497296E-08"
+            izz="3.83022654282651E-05"
+            color="link_color" />
+    <xacro:link_joint prefix="qr0" type="revolute" xyz="0.0176401317247248 0 -4.5027795268604E-05" rpy="0 1.5707963267949 0" parent="motor_qr0" child="link_qr0" axis="0 0 1" />
+
+    <xacro:motor_link prefix="qr1" />
+    <xacro:motor_joint prefix="qr1" xyz="0 0.066422631724724 0.0500450277952697" rpy="0 0 -1.57079632679491" parent="link_qr0" child="motor_qr1" />
+
+    <xacro:link prefix="qr1" suffix="r1" 
+            xyz="-4.65784220375909E-05 -0.00400017244374749 0.0314904318565732" 
+            mass="0.125508720332659"
+            ixx="4.86757343787694E-05"
+            ixy="3.65808621604759E-19"
+            ixz="2.4753952859359E-15"
+            iyy="8.08142303053274E-05"
+            iyz="-3.43048619914877E-09"
+            izz="4.19570502040363E-05"
+            color="link_color"/>
+    <xacro:link_joint prefix="qr1" type="revolute" xyz="0.0176401317247248 0 -4.5027795268604E-05" rpy="1.57079632679488 0 1.57079632679491" parent="motor_qr1" child="link_qr1" axis="0 0 1" />
+
+    <xacro:motor_link prefix="qr2" />
+    <xacro:motor_joint prefix="qr2" xyz="4.50277952689093E-05 0.00160986827527465 0.0487837485550931" rpy="1.5708 0 1.57079632679489" parent="link_qr1" child="motor_qr2" />
+
+    <xacro:link prefix="qr2" suffix="r2" 
+            xyz="3.2386340470536E-08 -2.04763144413811E-06 0.046083840055248" 
+            mass="0.177112239219215"
+            ixx="6.24423710962163E-05"
+            ixy="-3.46132439774195E-11"
+            ixz="9.45546169428818E-11"
+            iyy="8.75794479348696E-05"
+            iyz="-8.10383017896737E-09"
+            izz="4.4171936285476E-05"
+            color="link_color"/>
+    <xacro:link_joint prefix="qr2" type="revolute" xyz="0.0176401317247248 -4.50277952686318E-05 0" rpy="1.5707963267949 -1.5707963267949 1.5707963267949" parent="motor_qr2" child="link_qr2" axis="0 0 1" />
+
+    <xacro:motor_link prefix="qr3" />
+    <xacro:motor_joint prefix="qr3" xyz="0 0 0.0384098682752751" rpy="0 -1.5708 0" parent="link_qr2" child="motor_qr3" />
+
+    <xacro:link prefix="qr3" suffix="r3" 
+            xyz="0.0151694469619094 -4.51201603857143E-10 -0.000866438479056875" 
+            mass="0.169169755966947"
+            ixx="5.43200800675035E-05"
+            ixy="-1.27206313407834E-12"
+            ixz="-4.72035918422055E-10"
+            iyy="5.8321559860457E-05"
+            iyz="-4.64625826341459E-13"
+            izz="2.86622818226399E-05"
+            color="link_color"/>
+    <xacro:link_joint prefix="qr3" type="revolute" xyz="0 0 0.0940499999999999" rpy="1.57079632679484 -1.5707963267949 0" parent="link_qr2" child="link_qr3" axis="0 0 -1" />
+
+    <xacro:link prefix="cfr" suffix="cf" 
+            xyz="5.55111512312578E-17 0 1.38777878078145E-17" 
+            mass="0.00538971265618945"
+            ixx="8.16681795861267E-07"
+            ixy="7.61350069227245E-13"
+            ixz="-7.02831426100783E-14"
+            iyy="1.53526099929422E-06"
+            iyz="4.6459713650591E-14"
+            izz="1.5246161394666E-06" 
+            color="motor_color"/>
+    <xacro:link_joint prefix="cfr" type="fixed" xyz="0.0650000113064422 0 0" rpy="0 0 0" parent="link_qr3" child="link_cfr" axis="0 0 0" />
+
+    <xacro:link prefix="ree" suffix="ee" 
+            xyz="5.55111512312578E-17 0 -2.77555756156289E-17"
+            mass="0.0386067357498254"
+            ixx="3.68984907930345E-06"
+            ixy="7.25158239907005E-12"
+            ixz="-1.54796460272442E-06"
+            iyy="2.44168936526029E-05"
+            iyz="1.80917489247246E-12"
+            izz="2.52602134650841E-05"   
+            color="cover_color"/>
+    <xacro:link_joint prefix="ree" type="fixed" xyz="0.122883670845766 0 0.00494664196721117" rpy="0 0 0" parent="link_qr3" child="link_ree" axis="0 0 0" />
+
+</robot>

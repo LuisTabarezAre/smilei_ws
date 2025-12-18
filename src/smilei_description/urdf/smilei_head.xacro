@@ -1,0 +1,33 @@
+<?xml version ="1.0"?>
+<robot  xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+    <link name="head_link">
+        <inertial>
+            <origin xyz="-0.00194719502025795 -0.00507322884618888 0.00458930532049323" rpy="0 0 0" />
+            <mass value="4.95327171902462" />
+            <inertia ixx="0.0287690196977937" ixy="6.03520670584606E-06" ixz="0.000340504077086098" iyy="0.0293183754516323" iyz="-2.90299393982322E-06" izz="0.0279793601866727" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///home/robot/ws_smilei/src/smilei_description/meshes/head/head_link.STL" />
+            </geometry>
+            <material name="head_color"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///home/robot/ws_smilei/src/smilei_description/meshes/head/head_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="head_joint" type="fixed">
+        <origin xyz="0.00892007209728322 0.00498018673025529 0.352220146089762" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="head_link" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+
+</robot>

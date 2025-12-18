@@ -1,0 +1,29 @@
+{
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/cubot/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/cubot/ws_moveit2/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/cubot/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/cubot/ws_moveit2/install/launch_param_builder/lib/python3.10/site-packages",
+        "/home/cubot/course3_ws/build/lifecycle_py",
+        "/home/cubot/course3_ws/install/lifecycle_py/lib/python3.10/site-packages",
+        "/home/cubot/course3_ws/build/actions_py",
+        "/home/cubot/course3_ws/install/actions_py/lib/python3.10/site-packages",
+        "/home/cubot/course3_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/cubot/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/cubot/ws_moveit2/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/cubot/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/cubot/ws_moveit2/install/launch_param_builder/lib/python3.10/site-packages",
+        "/home/cubot/course3_ws/build/lifecycle_py",
+        "/home/cubot/course3_ws/install/lifecycle_py/lib/python3.10/site-packages",
+        "/home/cubot/course3_ws/build/actions_py",
+        "/home/cubot/course3_ws/install/actions_py/lib/python3.10/site-packages",
+        "/home/cubot/course3_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
