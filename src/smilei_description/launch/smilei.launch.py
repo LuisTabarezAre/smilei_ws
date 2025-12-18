@@ -14,7 +14,7 @@ from launch.actions import (
 from launch.event_handlers import OnProcessExit
 from launch.substitutions import Command, LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from nav2_common.launch import RewrittenYaml
+#from nav2_common.launch import RewrittenYaml
 import xacro
 
 from launch_ros.actions import Node
